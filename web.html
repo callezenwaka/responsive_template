@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="icon" href="public/favicon.ico">
+<title>Responsive Navbar</title>
+<link rel="stylesheet" type="text/css" href="public/font-awesome/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Libre+Baskerville:700i" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="public/css/web.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header" id="header">
+			<nav class="nav" id="navbar">
+				<div class="Menubar" id="Menubar">
+					<div class="button" id="button">
+						  <div class="bar1"></div>
+						  <div class="bar2"></div>
+						  <div class="bar3"></div>
+					</div>
+					<a class="logo" id="logo" style="font-family: 'Kaushan Script', cursive;text-shadow: 4px 4px 4px rgba(51, 51, 51, 0.5);" href="/"><strong>RESPONSIVE SITE</strong></a>
+					<a href="#">
+						<img class="profileImage" src="public/user/default.jpg" alt="user's image">
+					</a>
+				</div> <!-- End of Logo, search, open -->
+				<div>
+					<ul id="Menu" class="Menu">
+						<li class="{{ Request::is('/') ? 'active' : '' }}"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+						<li class="{{ Request::is('about') ? 'active' : '' }}"><a href="#">About</a></li>
+						<li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="#">Contact</a></li>
+						<li class="{{ Request::is('blog') ? 'active' : '' }}"><a href="#">Blog</a></li>
+						<li class="drop" id="drop">
+							<a class="user" id="user" href="#" onclick="event.preventDefault();">
+							<img class="profileImage" src="public/user/default.jpg" alt="user's image"><span >User</span>
+							<span class="mobile_arrow">
+								<i class="fa fa-angle-up up"></i>
+								<i class="fa fa-angle-down down"></i>
+								<i class="fa fa-angle-right right"></i>
+							</span>
+							</a>
+							<ul class="subMenu">
+								<li><a href="{{route('user.show_user',Auth::user()->slug)}}"><i class="fa fa-user-circle" aria-hidden="true"></i><span> Profile</span></a>
+									<span class="mobile_arrow">
+										<i class="fa fa-angle-right"></i>
+										<i class="fa fa-angle-down"></i>
+									</span>
+								</li>
+								<li><a href="#" class=""><span>Careers</span></a>
+									<span class="mobile_arrow">
+										<i class="fa fa-angle-right"></i>
+										<i class="fa fa-angle-down"></i>
+									</span>
+								</li>
+								<li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+									<span class="mobile_arrow">
+										<i class="fa fa-angle-right right"></i>
+										<i class="fa fa-angle-down down"></i>
+									</span>
+								</li>
+							</ul>
+						</li>
+						<li class="{{ Request::is('login') ? 'active' : '' || Request::is('admin-login') ? 'active' : ''}}"><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>	</li>
+						<li class="{{ Request::is('register') ? 'active' : '' }}"><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
+					</ul>
+				</div>
+			</nav> <!-- End of small screen menu &#9587;-->
+		</header> <!-- End of header -->
+
+		<section class="hero hero-row ">
+			<div class="hero-background">
+	
+			</div>
+		</section>
+
+		<section class="info">
+			<div>
+				<h1 class="center">This is a responsive Navbar</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p class="content center" style="background-color: rgba(51, 51, 51, 0.08);">
+		  		All right reserved &copy 2018 || <a href="https://twitter.com/callezenwaka">@callezenwaka</a>
+			</p>
+		</footer> 
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="public/js/web.js"></script>
+
+</body>
+</html>
